@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>ผลการประเมินความพอใจ</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#result {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#score {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff; /* เปลี่ยนสีตัวอักษรเป็นสีน้ำเงิน */
+}
+
+#details {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #555; /* เปลี่ยนสีตัวอักษรเป็นสีเทาเข้ม */
+}
+
+#restartBtn {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff; /* เปลี่ยนสีพื้นหลังปุ่มเป็นสีน้ำเงิน */
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+#restartBtn:hover {
+  background-color: #0056b3; /* เปลี่ยนสีพื้นหลังปุ่มเมื่อเมาส์ชี้ที่ปุ่ม */
+}
+
+
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>ผลการประเมินความพอใจ</h1>
+
+  <div id="result">
+    
+    <p id="score">คะแนนที่คำนวณได้: <span id="scoreValue"></span> คะแนน</p>
+    <div id="details">
+      <!-- รายละเอียดของผลคะแนน -->
+    </div>
+    <a href="index.html" id="restartBtn">ทำแบบประเมินอีกครั้ง</a>
+  </div>
+
+  <!-- JavaScript สำหรับการแสดงผลคะแนน -->
+  <script src="script.js"></script>
+  <script>
+    // ดึงค่าชื่อผู้ประเมินจาก URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const assessorName = urlParams.get('name');
+
+    // แสดงชื่อผู้ประเมินในส่วนของ HTML
+    const assessorNameElement = document.getElementById('assessorName');
+    assessorNameElement.textContent = assessorName;
+  </script>
+</body>
+</html>
